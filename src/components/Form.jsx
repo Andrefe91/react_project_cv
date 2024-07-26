@@ -1,5 +1,8 @@
-import { useState } from 'react'
+import Section from '../components/Section.jsx'
+import JobExperience from './JobExperience.jsx'
+
 import '../styles/Form.css'
+import PersonalInfo from './PersonalInfo.jsx'
 
 export default function Form({userData, onChange}){
 
@@ -8,26 +11,14 @@ export default function Form({userData, onChange}){
         <>
             <h3>Form Component</h3>
 
-            <section className="card">
-                <div className="card-header">
-                    Personal Information
-                </div>
+            <Section> {/* Component */}
+                <PersonalInfo userData={userData} onChange={onChange}/>
+            </Section>
 
-                <div className="form-group">
-                    <label htmlFor="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="personalInfo.firstName" value={userData.personalInfo.firstName} onChange={onChange} required/>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="personalInfo.lastName" value={userData.personalInfo.lastName} onChange={onChange} required/>
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="personalInfo.email" value={userData.personalInfo.email} onChange={onChange} required/>
-                </div>
-            </section>
+            <Section>
+                <JobExperience userData={userData} onChange={onChange} positionId={0}/>
+                <JobExperience userData={userData} onChange={onChange} positionId={1}/>
+            </Section>
         </>
     )
 }
