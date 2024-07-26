@@ -8,41 +8,58 @@ function App() {
   let personalInfo = {
     'firstName' : "",
     'lastName' : "",
+    'title' : "",
     'email' : "",
     'phone' : "",
-    'address' : "",
-    'gender' : "",
-    'nationality' : "",
-    'occupation' : "",
-    'maritalStatus' : "",
-    /* [Todo] - Set the rest of the fields */
+    'gender' : "Male",
+    'nationality' : "United States",
   };
 
+  let educationalInfo = [{}];
 
-  let educationalInfo = {};
-  let workInfo = {};
+  let experienceInfo = [{}, {}];
 
 
   const [isFormMode, setIsFormMode] = useState(true);
 	const [userData, setUserData] = useState({
     'personalInfo' : personalInfo,
     'educationalInfo' : educationalInfo,
-    'workInfo' : workInfo,
+    'experienceInfo' : experienceInfo,
   });
 
   function userDataManipulation(e) {
-    const [sectionName, propertyName] = e.target.name.split('.');
+    const [sectionName, propertyName, positionId] = e.target.name.split('.');
+
+    if (sectionName == "personalInfo") {
+      setUserData({
+        ...userData,
+        [sectionName] : {
+          ...userData[sectionName],
+          [propertyName] : e.target.value
+        }
+      })
+    } else {
+      setUserData({
+        ...userData,
+        [sectionName] :  {
+          ...userData[sectionName],
+          [positionId] : { //Returns the array in the positionId
+           ...userData[sectionName][positionId],
+            [propertyName] : e.target.value
+          }
+        }
+      })
+    }
+  }
 
 
-    setUserData({
-      ...userData,
-      [sectionName] : {
-        ...userData[sectionName],
-        [propertyName] : e.target.value
-      }
-    })
 
-    console.log(userData);
+  function addExperience() {
+    // [Todo]
+  }
+
+  function addEducation() {
+    // [Todo]
   }
 
 	return (
