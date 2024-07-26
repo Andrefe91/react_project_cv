@@ -1,0 +1,59 @@
+import { useState } from "react";
+
+import "../styles/App.css";
+import Form from "./Form.jsx";
+import Result from "./Result.jsx";
+
+function App() {
+  let personalInfo = {
+    'firstName' : "",
+    'lastName' : "",
+    'email' : "",
+    'phone' : "",
+    'address' : "",
+    'gender' : "",
+    'nationality' : "",
+    'occupation' : "",
+    'maritalStatus' : "",
+    /* [Todo] - Set the rest of the fields */
+  };
+
+
+  let educationalInfo = {};
+  let workInfo = {};
+
+
+  const [isFormMode, setIsFormMode] = useState(true);
+	const [userData, setUserData] = useState({
+    'personalInfo' : personalInfo,
+    'educationalInfo' : educationalInfo,
+    'workInfo' : workInfo,
+  });
+
+  function userDataManipulation(e) {
+    const [sectionName, propertyName] = e.target.name.split('.');
+
+
+    setUserData({
+      ...userData,
+      [sectionName] : {
+        ...userData[sectionName],
+        [propertyName] : e.target.value
+      }
+    })
+
+    console.log(userData);
+  }
+
+	return (
+		<>
+			<p>Work in progress...</p>
+
+			{isFormMode ? <Form userData={userData} onChange={userDataManipulation}/> : <Result userData={userData}/>}
+
+			<button onClick={() => setIsFormMode(!isFormMode)}>App Mode</button>
+		</>
+	);
+}
+
+export default App;
