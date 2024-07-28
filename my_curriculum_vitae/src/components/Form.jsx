@@ -9,8 +9,7 @@ import PersonalInfo from "./PersonalInfo.jsx";
 export default function Form({
 	userData,
 	onChange,
-	addExperience,
-	addEducation,
+	addBlock,
 	deleteFunc,
 }) {
 	return (
@@ -26,7 +25,7 @@ export default function Form({
 			<Section>
 				{userData.experienceInfo.map((value, index) => {
 					return (
-						<Fragment key={uniqid()}>
+						<Fragment key={index}>
 							<JobExperience
 								userData={userData}
 								onChange={onChange}
@@ -39,7 +38,7 @@ export default function Form({
 					);
 				})}
 				<br />
-				<button onClick={addExperience}>Add Experience</button>
+				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
 			</Section>
 		</>
 	);

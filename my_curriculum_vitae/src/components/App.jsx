@@ -49,18 +49,17 @@ function App() {
 		}
 	}
 
-	function addExperience() {
-		setUserData((prevState) => {
-			let updatedUserData = { ...prevState };
-			updatedUserData.experienceInfo.push({});
-			return updatedUserData;
-		});
-	}
+	function addBlock(e) {
+		let element = e.target.getAttribute("element");
+		const blockNumber = userData[element].length
 
-	function addEducation() {
 		setUserData((prevState) => {
 			let updatedUserData = { ...prevState };
-			updatedUserData.educationInfo.push({});
+
+			if (blockNumber == updatedUserData[element].length) {
+				updatedUserData.experienceInfo.push({});
+			}
+
 			return updatedUserData;
 		});
 	}
@@ -68,18 +67,21 @@ function App() {
 	function deleteFunc(e) {
 		let element = e.target.getAttribute("element");
 		let id = e.target.getAttribute("id");
-		let updatedCategory = [];
+
+		// Filter the array as to get only the elements we dont want to delete
+		let updatedCategory = userData[element].filter((_, index) => {
+			if (index != id) {
+				return true;
+            }
+		})
 
 		setUserData((prevState) => {
+			console.log("called inside")
 			let updatedUserData = {...prevState };
 
-			updatedUserData[element].map((value, index) => {
-				if (index != id) {
-					updatedCategory.push(value);
-				}
-			})
-
+			// And just update the array value inside the main object
 			updatedUserData[element] = updatedCategory;
+
 			return updatedUserData;
 		})
 	}
@@ -92,7 +94,7 @@ function App() {
 				<Form
 					userData={userData}
 					onChange={userDataManipulation}
-					addExperience={addExperience}
+					addBlock={addBlock}
 					deleteFunc={deleteFunc}
 				/>
 			) : (
