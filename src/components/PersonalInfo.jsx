@@ -15,6 +15,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					name="personalInfo.firstName"
 					value={userData.personalInfo.firstName}
 					onChange={onChange}
+					autoComplete="name"
 					required
 				/>
 			</div>
@@ -27,6 +28,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					name="personalInfo.lastName"
 					value={userData.personalInfo.lastName}
 					onChange={onChange}
+					autoComplete="family-name"
 					required
 				/>
 			</div>
@@ -51,6 +53,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					name="personalInfo.email"
 					value={userData.personalInfo.email}
 					onChange={onChange}
+					autoComplete="email"
 					required
 				/>
 			</div>
@@ -63,6 +66,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					name="personalInfo.phone"
 					value={userData.personalInfo.phone}
 					onChange={onChange}
+					autoComplete="tel"
 					required
 				/>
 			</div>
