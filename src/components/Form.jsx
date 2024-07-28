@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import uniqid from "uniqid";
 import Section from "../components/Section.jsx";
 import JobExperience from "./JobExperience.jsx";
+import EducationExperience from "./educationExperience.jsx";
 
 import "../styles/Form.css";
 import PersonalInfo from "./PersonalInfo.jsx";
@@ -23,7 +24,7 @@ export default function Form({
 			</Section>
 
 			<Section>
-				{userData.experienceInfo.map((value, index) => {
+				{userData.experienceInfo.map((_, index) => {
 					return (
 						<Fragment key={index}>
 							<JobExperience
@@ -39,6 +40,23 @@ export default function Form({
 				})}
 				<br />
 				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
+			</Section>
+
+			<Section>
+				{userData.educationInfo.map((_, index) => {
+					return (
+						<Fragment key={index}>
+							<EducationExperience
+								userData={userData}
+								onChange={onChange}
+								positionId={index}
+								deleteFunc={deleteFunc}
+							/>
+
+							{userData.educationInfo[index + 1] != undefined && <hr />}
+						</Fragment>
+					);
+				})}
 			</Section>
 		</>
 	);
