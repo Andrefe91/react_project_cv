@@ -1,21 +1,45 @@
+import { Fragment } from "react";
+import uniqid from "uniqid";
 import Section from "../components/Section.jsx";
 import JobExperience from "./JobExperience.jsx";
 
 import "../styles/Form.css";
 import PersonalInfo from "./PersonalInfo.jsx";
 
-export default function Form({ userData, onChange }) {
+export default function Form({
+	userData,
+	onChange,
+	addExperience,
+	addEducation,
+	deleteFunc,
+}) {
 	return (
 		<>
 			<h3>Form Component</h3>
 
-			<Section> {/* Component */}
+			<Section>
+				{" "}
+				{/* Component */}
 				<PersonalInfo userData={userData} onChange={onChange} />
 			</Section>
 
 			<Section>
-				<JobExperience userData={userData} onChange={onChange} positionId={0} />
-				<JobExperience userData={userData} onChange={onChange} positionId={1} />
+				{userData.experienceInfo.map((value, index) => {
+					return (
+						<Fragment key={uniqid()}>
+							<JobExperience
+								userData={userData}
+								onChange={onChange}
+								positionId={index}
+								deleteFunc={deleteFunc}
+							/>
+
+							{userData.experienceInfo[index + 1] != undefined && <hr />}
+						</Fragment>
+					);
+				})}
+				<br />
+				<button onClick={addExperience}>Add Experience</button>
 			</Section>
 		</>
 	);

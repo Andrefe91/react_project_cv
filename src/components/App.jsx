@@ -15,14 +15,14 @@ function App() {
 		nationality: "United States",
 	};
 
-	let educationalInfo = [{}];
+	let educationInfo = [{}];
 
-	let experienceInfo = [{}, {}];
+	let experienceInfo = [{}];
 
 	const [isFormMode, setIsFormMode] = useState(true);
 	const [userData, setUserData] = useState({
 		personalInfo: personalInfo,
-		educationalInfo: educationalInfo,
+		educationInfo: educationInfo,
 		experienceInfo: experienceInfo,
 	});
 
@@ -38,26 +38,50 @@ function App() {
 				},
 			});
 		} else {
-			setUserData({
-				...userData,
-				[sectionName]: {
-					...userData[sectionName],
-					[positionId]: {
-						//Returns the array in the positionId
-						...userData[sectionName][positionId],
-						[propertyName]: e.target.value,
-					},
-				},
+			setUserData((prevState) => {
+				let updatedUserData = { ...prevState };
+				updatedUserData[sectionName][positionId] = {
+					...updatedUserData[sectionName][positionId],
+					[propertyName]: e.target.value,
+				};
+				return updatedUserData;
 			});
 		}
 	}
 
 	function addExperience() {
-		// [Todo]
+		setUserData((prevState) => {
+			let updatedUserData = { ...prevState };
+			updatedUserData.experienceInfo.push({});
+			return updatedUserData;
+		});
 	}
 
 	function addEducation() {
-		// [Todo]
+		setUserData((prevState) => {
+			let updatedUserData = { ...prevState };
+			updatedUserData.educationInfo.push({});
+			return updatedUserData;
+		});
+	}
+
+	function deleteFunc(e) {
+		let element = e.target.getAttribute("element");
+		let id = e.target.getAttribute("id");
+		let updatedCategory = [];
+
+		setUserData((prevState) => {
+			let updatedUserData = {...prevState };
+
+			updatedUserData[element].map((value, index) => {
+				if (index != id) {
+					updatedCategory.push(value);
+				}
+			})
+
+			updatedUserData[element] = updatedCategory;
+			return updatedUserData;
+		})
 	}
 
 	return (
@@ -65,7 +89,12 @@ function App() {
 			<p>Work in progress...</p>
 
 			{isFormMode ? (
-				<Form userData={userData} onChange={userDataManipulation} />
+				<Form
+					userData={userData}
+					onChange={userDataManipulation}
+					addExperience={addExperience}
+					deleteFunc={deleteFunc}
+				/>
 			) : (
 				<Result userData={userData} />
 			)}
