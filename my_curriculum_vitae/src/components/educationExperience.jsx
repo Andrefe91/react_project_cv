@@ -360,7 +360,11 @@ export default function EducationExperience({
 				/>
 			</div>
 
-            <button onClick={deleteFunc} element="educationInfo" id={positionId}>Delete</button>
+            <div className="form-group">
+				<button className="delete" onClick={deleteFunc} element="educationInfo" id={positionId}>
+					Delete
+				</button>
+			</div>
 		</>
 	);
 }

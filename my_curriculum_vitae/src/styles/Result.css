@@ -1,0 +1,22 @@
+.cardInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-left: 0.6em;
+}
+
+.cardInformation h3 {
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.cardInformation p {
+    margin: 0.3em 0 0.3em 0 ;
+    text-align: left;
+}
+
+.resultTitle {
+    margin-top: 1em;
+    text-align: left;
+}

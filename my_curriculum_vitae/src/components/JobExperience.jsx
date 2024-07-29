@@ -355,7 +355,9 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 				></textarea>
 			</div>
 
-			<button onClick={deleteFunc} element="experienceInfo" id={positionId}>Delete</button>
+			<div className="form-group">
+				<button className="delete" onClick={deleteFunc} element="experienceInfo" id={positionId}>Delete</button>
+			</div>
 		</>
 	);
 }

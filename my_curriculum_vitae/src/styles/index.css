@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  box-sizing: border-box;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -25,9 +26,11 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 0 1.5em 0 1.5em
 }
 
 h1 {
@@ -38,7 +41,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.6em 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -53,6 +56,57 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+svg {
+  height: 1em;
+}
+
+hr {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: flex;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+  align-items: flex-start;
+}
+
+.form-group input, select {
+  height: 2em;
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 0.5em;
+}
+
+.delete {
+  flex: auto;
+  margin-top: 1em;
+  background-color: rgba(233, 94, 94, 0.603);
+
+  &:hover {
+    background-color: rgb(158, 42, 42);
+    border-color: rgba(173, 54, 54, 0.829);
+  }
+}
+
+.addBlock {
+  background-color: rgba(68, 156, 68, 0.733);
+
+  &:hover {
+    background-color: rgba(97, 218, 97, 0.733);
+    border-color: rgba(97, 218, 97, 0.733);
+  }
+}
+
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
