@@ -27,6 +27,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -64,6 +65,12 @@ svg {
 hr {
   width: 100%;
   margin-top: 1em;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .form-group {
