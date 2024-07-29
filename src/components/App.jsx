@@ -51,13 +51,14 @@ function App() {
 
 	function addBlock(e) {
 		let element = e.target.getAttribute("element");
+    console.log(element);
 		const blockNumber = userData[element].length
 
 		setUserData((prevState) => {
 			let updatedUserData = { ...prevState };
 
 			if (blockNumber == updatedUserData[element].length) {
-				updatedUserData.experienceInfo.push({});
+				updatedUserData[element].push({});
 			}
 
 			return updatedUserData;
@@ -76,7 +77,6 @@ function App() {
 		})
 
 		setUserData((prevState) => {
-			console.log("called inside")
 			let updatedUserData = {...prevState };
 
 			// And just update the array value inside the main object

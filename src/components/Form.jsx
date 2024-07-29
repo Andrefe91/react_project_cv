@@ -39,6 +39,7 @@ export default function Form({
 					);
 				})}
 				<br />
+
 				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
 			</Section>
 
@@ -57,6 +58,9 @@ export default function Form({
 						</Fragment>
 					);
 				})}
+                <br />
+
+                <button onClick={addBlock} element="educationInfo">Add Education</button>
 			</Section>
 		</>
 	);
