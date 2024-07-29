@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import "../styles/App.css";
+import Footer from "./footer.jsx";
 import Form from "./Form.jsx";
 import Result from "./Result.jsx";
 
@@ -83,19 +84,21 @@ function App() {
 		<>
 			<p>Work in progress...</p>
 
-			{isFormMode ? (
-				<Form
-					userData={userData}
-					onChange={userDataManipulation}
-					addBlock={addBlock}
-					deleteFunc={deleteFunc}
-				/>
-			) : (
-				<Result userData={userData} />
-			)}
+			<div className="mainContainer">
+				{isFormMode ? (
+					<Form
+						userData={userData}
+						onChange={userDataManipulation}
+						addBlock={addBlock}
+						deleteFunc={deleteFunc}
+					/>
+				) : (
+					<Result userData={userData} />
+				)}
 
-			<br />
-			<button onClick={() => setIsFormMode(!isFormMode)}>App Mode</button>
+				<br />
+				<button onClick={() => setIsFormMode(!isFormMode)}>App Mode</button>
+			</div>
 		</>
 	);
 }
