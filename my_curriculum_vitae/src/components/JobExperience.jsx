@@ -8,10 +8,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			<h3>JobExperience Component</h3>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.jobTitle`}>Job Title</label> <br />
+				<label htmlFor={`${positionId}.jobTitle.experienceInfo`}>Job Title</label> <br />
 				<input
 					type="text"
-					id={`${positionId}.jobTitle`}
+					id={`${positionId}.jobTitle.experienceInfo`}
 					name={`experienceInfo.jobTitle.${positionId}`}
 					value={userExperienceInfo.jobTitle}
 					onChange={onChange}
@@ -20,10 +20,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.company`}>Company</label> <br />
+				<label htmlFor={`${positionId}.company.experienceInfo`}>Company</label> <br />
 				<input
 					type="text"
-					id={`${positionId}.company`}
+					id={`${positionId}.company.experienceInfo`}
 					name={`experienceInfo.company.${positionId}`}
 					value={userExperienceInfo.company}
 					onChange={onChange}
@@ -32,10 +32,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.country`}>Country</label> <br />
+				<label htmlFor={`${positionId}.country.experienceInfo`}>Country</label> <br />
 				<select
 					name={`experienceInfo.country.${positionId}`}
-					id={`${positionId}.country`}
+					id={`${positionId}.country.experienceInfo`}
 					value={userExperienceInfo.country}
 					onChange={onChange}
 					required
@@ -309,10 +309,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.city`}>City</label> <br />
+				<label htmlFor={`${positionId}.city.experienceInfo`}>City</label> <br />
 				<input
 					type="text"
-					id={`${positionId}.city`}
+					id={`${positionId}.city.experienceInfo`}
 					name={`experienceInfo.city.${positionId}`}
 					value={userExperienceInfo.city}
 					onChange={onChange}
@@ -321,10 +321,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.dateFrom`}>Date From </label>
+				<label htmlFor={`${positionId}.dateFrom.experienceInfo`}>Date From </label>
 				<input
 					type="date"
-					id={`${positionId}.dateFrom`}
+					id={`${positionId}.dateFrom.experienceInfo`}
 					name={`experienceInfo.dateFrom.${positionId}`}
 					value={userExperienceInfo.dateFrom}
 					onChange={onChange}
@@ -333,10 +333,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.dateTo`}>Date To </label>
+				<label htmlFor={`${positionId}.dateTo.experienceInfo`}>Date To </label>
 				<input
 					type="date"
-					id={`${positionId}.dateTo`}
+					id={`${positionId}.dateTo.experienceInfo`}
 					name={`experienceInfo.dateTo.${positionId}`}
 					value={userExperienceInfo.dateTo}
 					onChange={onChange}
@@ -345,10 +345,10 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 			</div>
 
 			<div className="form-group">
-				<label htmlFor={`${positionId}.descripton`}>Description</label> <br />
+				<label htmlFor={`${positionId}.descripton.experienceInfo`}>Description</label> <br />
 				<textarea
 					name={`experienceInfo.description.${positionId}`}
-					id={`${positionId}.descripton`}
+					id={`${positionId}.descripton.experienceInfo`}
 					value={userExperienceInfo.description}
 					onChange={onChange}
 					rows={4}
