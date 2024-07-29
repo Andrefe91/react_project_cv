@@ -94,6 +94,7 @@ function App() {
 				<Result userData={userData} />
 			)}
 
+			<br />
 			<button onClick={() => setIsFormMode(!isFormMode)}>App Mode</button>
 		</>
 	);

@@ -23,10 +23,12 @@ export default function Form({
 			</Section>
 
 			<div className="card-header">
-				<h3>Education Experience Component</h3>
+				<h2>Education Information</h2>
 			</div>
 
 			<Section>
+				{userData.educationInfo.length == 0 && <p>[ Add an Education block to edit ] </p>}
+
 				{userData.educationInfo.map((_, index) => {
 					return (
 						<Fragment key={index}>
@@ -43,14 +45,16 @@ export default function Form({
 				})}
                 <br />
 
-                <button onClick={addBlock} element="educationInfo">Add Education</button>
 			</Section>
+			<button className="addBlock" onClick={addBlock} element="educationInfo">Add Education</button>
 
 			<div className="card-header">
-				<h3>JobExperience Component</h3>
+				<h2>Work Experience Information</h2>
 			</div>
 
 			<Section>
+				{userData.experienceInfo.length == 0 && <p>[ Add a Work Experience block to edit ] </p>}
+
 				{userData.experienceInfo.map((_, index) => {
 					return (
 						<Fragment key={index}>
@@ -67,8 +71,9 @@ export default function Form({
 				})}
 				<br />
 
-				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
 			</Section>
+
+			<button className="addBlock" onClick={addBlock} element="experienceInfo">Add Work Experience</button>
 		</>
 	);
 }

@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { useState } from "react";
 import { format } from "date-fns";
 
+import Result_section from "./resultSection.jsx";
 import Section from "../components/Section.jsx";
 import "../styles/Result.css";
 
@@ -17,21 +18,21 @@ export default function Result({ userData }) {
 	const personalDetails = (() => {
 		if (hasPersonalDetails) {
 			return (
-				<Section>
-					<div>
+				<Result_section>
+					<div className="cardInformation">
 						<h3>{[personalInfo.firstName, personalInfo.lastName].join(" ")}</h3>
 						<p>{personalInfo.title}</p>
 						<p>{personalInfo.email}</p>
 						<p>{personalInfo.phone}</p>
 						<p>{personalInfo.nationality}</p>
 					</div>
-				</Section>
+				</Result_section>
 			);
 		} else {
 			return (
-				<Section>
+				<Result_section>
 					<p>No Personal Information available</p>
-				</Section>
+				</Result_section>
 			);
 		}
 	})();
@@ -48,8 +49,8 @@ export default function Result({ userData }) {
 			return educationInfo.map((education, index) => {
 				//Return each and every entry
 				return (
-					<Section key={index}>
-						<div>
+					<Result_section key={index}>
+						<div className="cardInformation">
 							<h3>
 								{education.gradeOfStudies} in {education.areaOfStudies}
 							</h3>
@@ -67,14 +68,14 @@ export default function Result({ userData }) {
 									)}
 							</p>
 						</div>
-					</Section>
+					</Result_section>
 				);
 			});
 		} else {
 			return (
-				<Section>
+				<Result_section>
 					<p>No Education Information available</p>
-				</Section>
+				</Result_section>
 			);
 		}
 	})();
@@ -89,8 +90,8 @@ export default function Result({ userData }) {
 		if (hasExperience) {
 			return experienceInfo.map((work, index) => {
 				return (
-					<Section key={index}>
-						<div>
+					<Result_section key={index}>
+						<div className="cardInformation">
 							<h3>{work.jobTitle}</h3>
 							<p>{work.company} -  {work.city}</p>
 							<p>{work.country}</p>
@@ -107,27 +108,33 @@ export default function Result({ userData }) {
 							</p>
 							<p>{work.description}</p>
 						</div>
-					</Section>
+					</Result_section>
 				);
 			});
 		} else {
 			return (
-				<Section>
+				<Result_section>
 					<p>No Work Information available</p>
-				</Section>
+				</Result_section>
 			);
 		}
 	})();
 
 	return (
 		<>
-			<h3>Personal Details</h3>
+			<div className="card-header">
+				<h2 className="resultTitle">Personal Information</h2>
+			</div>
 			{personalDetails}
 
-			<h3>Education</h3>
+			<div className="card-header">
+				<h2 className="resultTitle">Education Information</h2>
+			</div>
 			{educationList}
 
-			<h3>Work Experience</h3>
+			<div className="card-header">
+				<h2 className="resultTitle">Work Experience Information</h2>
+			</div>
 			{experienceList}
 		</>
 	);
