@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import uniqid from "uniqid";
 import Section from "../components/Section.jsx";
 import JobExperience from "./JobExperience.jsx";
 import EducationExperience from "./educationExperience.jsx";
@@ -15,33 +14,17 @@ export default function Form({
 }) {
 	return (
 		<>
-			<h3>Form Component</h3>
+			<div className="card-header">
+				<h2>Personal Information</h2>
+			</div>
 
 			<Section>
-				{" "}
-				{/* Component */}
 				<PersonalInfo userData={userData} onChange={onChange} />
 			</Section>
 
-			<Section>
-				{userData.experienceInfo.map((_, index) => {
-					return (
-						<Fragment key={index}>
-							<JobExperience
-								userData={userData}
-								onChange={onChange}
-								positionId={index}
-								deleteFunc={deleteFunc}
-							/>
-
-							{userData.experienceInfo[index + 1] != undefined && <hr />}
-						</Fragment>
-					);
-				})}
-				<br />
-
-				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
-			</Section>
+			<div className="card-header">
+				<h3>Education Experience Component</h3>
+			</div>
 
 			<Section>
 				{userData.educationInfo.map((_, index) => {
@@ -61,6 +44,30 @@ export default function Form({
                 <br />
 
                 <button onClick={addBlock} element="educationInfo">Add Education</button>
+			</Section>
+
+			<div className="card-header">
+				<h3>JobExperience Component</h3>
+			</div>
+
+			<Section>
+				{userData.experienceInfo.map((_, index) => {
+					return (
+						<Fragment key={index}>
+							<JobExperience
+								userData={userData}
+								onChange={onChange}
+								positionId={index}
+								deleteFunc={deleteFunc}
+							/>
+
+							{userData.experienceInfo[index + 1] != undefined && <hr />}
+						</Fragment>
+					);
+				})}
+				<br />
+
+				<button onClick={addBlock} element="experienceInfo">Add Experience</button>
 			</Section>
 		</>
 	);
