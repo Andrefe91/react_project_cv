@@ -10,8 +10,6 @@ export default function EducationExperience({
 
 	return (
 		<>
-			<h3>Education Experience Component</h3>
-
 			<div className="form-group">
 				<label htmlFor={`${positionId}.gradeOfStudies.educationInfo`}>Grade of Studies</label> <br />
 
@@ -341,7 +339,7 @@ export default function EducationExperience({
 			<div className="form-group">
 				<label htmlFor={`${positionId}.dateFrom.educationInfo`}>Date From</label> <br />
                 <input
-					type="text"
+					type="date"
 					id={`${positionId}.dateFrom.educationInfo`}
 					name={`educationInfo.dateFrom.${positionId}`}
                     value={userEducationInfo.dateFrom}
@@ -353,7 +351,7 @@ export default function EducationExperience({
 			<div className="form-group">
 				<label htmlFor={`${positionId}.dateTo.educationInfo`}>Date To</label> <br />
                 <input
-					type="text"
+					type="date"
 					id={`${positionId}.dateTo.educationInfo`}
 					name={`educationInfo.dateTo.${positionId}`}
                     value={userEducationInfo.dateTo}

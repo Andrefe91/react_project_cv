@@ -5,15 +5,7 @@ import Form from "./Form.jsx";
 import Result from "./Result.jsx";
 
 function App() {
-	let personalInfo = {
-		firstName: "",
-		lastName: "",
-		title: "",
-		email: "",
-		phone: "",
-		gender: "Male",
-		nationality: "United States",
-	};
+	let personalInfo = {};
 
 	let educationInfo = [{}];
 
@@ -51,12 +43,13 @@ function App() {
 
 	function addBlock(e) {
 		let element = e.target.getAttribute("element");
-    console.log(element);
 		const blockNumber = userData[element].length
 
+		// Create a new object element in the "element" array
 		setUserData((prevState) => {
 			let updatedUserData = { ...prevState };
 
+			// To avoid double creation and/or to avoid weird behaviour
 			if (blockNumber == updatedUserData[element].length) {
 				updatedUserData[element].push({});
 			}

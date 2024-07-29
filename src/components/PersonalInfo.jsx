@@ -3,12 +3,10 @@ import "../styles/PersonalInfo.css";
 export default function PersonalInfo({ userData, onChange }) {
 	return (
 		<>
-			<div className="card-header">
-				<h2>Personal Information</h2>
-			</div>
+
 
 			<div className="form-group">
-				<label htmlFor="firstName">First Name: </label>
+				<label htmlFor="firstName">First Name: </label> <br />
 				<input
 					type="text"
 					id="firstName"
@@ -21,7 +19,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			</div>
 
 			<div className="form-group">
-				<label htmlFor="lastName">Last Name: </label>
+				<label htmlFor="lastName">Last Name: </label>  <br />
 				<input
 					type="text"
 					id="lastName"
@@ -34,7 +32,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			</div>
 
 			<div className="form-group">
-				<label htmlFor="title">Title: </label>
+				<label htmlFor="title">Title: </label>  <br />
 				<input
 					type="text"
 					id="title"
@@ -46,7 +44,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			</div>
 
 			<div className="form-group">
-				<label htmlFor="email">Email: </label>
+				<label htmlFor="email">Email: </label>  <br />
 				<input
 					type="email"
 					id="email"
@@ -59,7 +57,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			</div>
 
 			<div className="form-group">
-				<label htmlFor="phone">Phone: </label>
+				<label htmlFor="phone">Phone: </label>  <br />
 				<input
 					type="tel"
 					id="phone"
@@ -72,7 +70,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			</div>
 
 			<div className="form-group">
-				<label htmlFor="gender">Gender: </label>
+				<label htmlFor="gender">Gender: </label>  <br />
 				<select
 					name="personalInfo.gender"
 					id="gender"
@@ -90,7 +88,7 @@ export default function PersonalInfo({ userData, onChange }) {
 			<div className="form-group">
 				<label htmlFor="nationality">
 					Nationality<span>*</span>:
-				</label>
+				</label> <br />
 				<select
 					name="personalInfo.nationality"
 					id="nationality"

@@ -5,8 +5,6 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 
 	return (
 		<>
-			<h3>JobExperience Component</h3>
-
 			<div className="form-group">
 				<label htmlFor={`${positionId}.jobTitle.experienceInfo`}>Job Title</label> <br />
 				<input
