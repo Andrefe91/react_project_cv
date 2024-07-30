@@ -14,6 +14,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					value={userData.personalInfo.firstName}
 					onChange={onChange}
 					autoComplete="name"
+					placeholder="John"
 					required
 				/>
 			</div>
@@ -27,6 +28,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					value={userData.personalInfo.lastName}
 					onChange={onChange}
 					autoComplete="family-name"
+					placeholder="Doe"
 					required
 				/>
 			</div>
@@ -39,6 +41,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					name="personalInfo.title"
 					value={userData.personalInfo.title}
 					onChange={onChange}
+                    placeholder="Software Engineer"
 					required
 				/>
 			</div>
@@ -52,6 +55,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					value={userData.personalInfo.email}
 					onChange={onChange}
 					autoComplete="email"
+					placeholder="john.doe@example.com"
 					required
 				/>
 			</div>
@@ -65,6 +69,7 @@ export default function PersonalInfo({ userData, onChange }) {
 					value={userData.personalInfo.phone}
 					onChange={onChange}
 					autoComplete="tel"
+					placeholder="(+00) 123-456-7890"
 					required
 				/>
 			</div>
