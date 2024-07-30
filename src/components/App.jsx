@@ -4,6 +4,7 @@ import "../styles/App.css";
 import Footer from "./footer.jsx";
 import Form from "./Form.jsx";
 import Result from "./Result.jsx";
+import NavBar from "./navbar.jsx";
 
 function App() {
 	let personalInfo = {};
@@ -82,7 +83,7 @@ function App() {
 
 	return (
 		<>
-			<p>Work in progress...</p>
+			<NavBar />
 
 			<div className="mainContainer">
 				{isFormMode ? (
