@@ -13,6 +13,7 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 					name={`experienceInfo.jobTitle.${positionId}`}
 					value={userExperienceInfo.jobTitle}
 					onChange={onChange}
+					placeholder="Junior Developer"
 					required
 				/>
 			</div>
@@ -25,6 +26,7 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 					name={`experienceInfo.company.${positionId}`}
 					value={userExperienceInfo.company}
 					onChange={onChange}
+					placeholder="Google"
 					required
 				/>
 			</div>
@@ -314,6 +316,7 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 					name={`experienceInfo.city.${positionId}`}
 					value={userExperienceInfo.city}
 					onChange={onChange}
+					placeholder="Los Angeles"
 					required
 				/>
 			</div>
@@ -349,6 +352,7 @@ export default function JobExperience({ userData, onChange, positionId, deleteFu
 					id={`${positionId}.descripton.experienceInfo`}
 					value={userExperienceInfo.description}
 					onChange={onChange}
+					placeholder="We did awesome things"
 					rows={4}
 					cols={40}
 					required

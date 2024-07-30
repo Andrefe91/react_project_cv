@@ -19,6 +19,7 @@ export default function EducationExperience({
 					name={`educationInfo.gradeOfStudies.${positionId}`}
                     value={userEducationInfo.gradeOfStudies}
 					onChange={onChange}
+					placeholder="Bachelor"
 					required
 				/>
 			</div>
@@ -31,6 +32,7 @@ export default function EducationExperience({
 					name={`educationInfo.areaOfStudies.${positionId}`}
                     value={userEducationInfo.areaOfStudies}
 					onChange={onChange}
+					placeholder="Computer Science"
 					required
 				/>
 			</div>
@@ -43,6 +45,7 @@ export default function EducationExperience({
 					name={`educationInfo.institution.${positionId}`}
                     value={userEducationInfo.institution}
 					onChange={onChange}
+					placeholder="University of California"
 					required
 				/>
 			</div>
@@ -332,6 +335,7 @@ export default function EducationExperience({
 					name={`educationInfo.city.${positionId}`}
                     value={userEducationInfo.city}
 					onChange={onChange}
+					placeholder="Berkeley"
 					required
 				/>
 			</div>

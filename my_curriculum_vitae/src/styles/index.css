@@ -92,6 +92,7 @@ hr {
   height: 2em;
   border: 2px solid rgb(175, 175, 175);
   border-radius: 0.5em;
+  padding-left: 0.5em;
 }
 
 .delete {
