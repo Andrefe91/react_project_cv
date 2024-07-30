@@ -3,6 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
   box-sizing: border-box;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -27,11 +30,10 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  
+
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  padding: 0 1.5em 0 1.5em
 }
 
 h1 {
@@ -68,6 +70,7 @@ hr {
 }
 
 .mainContainer {
+  width: 25em;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -103,12 +106,17 @@ hr {
 }
 
 .addBlock {
+  margin-top: 1em;
   background-color: rgba(68, 156, 68, 0.733);
 
   &:hover {
     background-color: rgba(97, 218, 97, 0.733);
     border-color: rgba(97, 218, 97, 0.733);
   }
+}
+
+.appMode {
+  margin-top: 2em;
 }
 
 

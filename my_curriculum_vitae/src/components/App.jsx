@@ -97,8 +97,11 @@ function App() {
 				)}
 
 				<br />
-				<button onClick={() => setIsFormMode(!isFormMode)}>App Mode</button>
+
+				<button className="appMode" onClick={() => setIsFormMode(!isFormMode)}> {isFormMode ? "Result" : "Edit"} Mode</button>
 			</div>
+
+			<Footer link={"https://github.com/Andrefe91/react_project_cv"}/>
 		</>
 	);
 }
